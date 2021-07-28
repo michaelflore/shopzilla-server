@@ -21,7 +21,7 @@ exports.getAllUsers = async function(req, res) {
         res.json(users);
     } catch(e) {
         return res.status(400).json({
-            error: e.message
+            error: 'Could not get all users.'
         })
     }
 }

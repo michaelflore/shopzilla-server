@@ -15,6 +15,7 @@ mongoose.connection.on('error', () => {
     throw new Error(`unable to connect to database`)
 })
 
+//Server
 app.listen(process.env.PORT , function(err) {
     console.log('Server is running')
 })
