@@ -50,7 +50,7 @@ exports.signin = async function(req, res) {
         })
     } catch(e) {
         return res.status(400).json({
-            error: e.message
+            error: "Could not sign in."
         })
     }
 }
