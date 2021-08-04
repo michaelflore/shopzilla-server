@@ -5,6 +5,7 @@
     "node": ">=0.12"
   },
   "scripts": {
+    "dev": "nodemon",
     "start": "node server.js"
   },
   "dependencies": {

@@ -1,4 +1,6 @@
 const Product = require('./../models/product.model');
+const User = require('./../models/user.model');
+const mongoose = require('mongoose');
 
 exports.productById = async function(req, res, next, id) {
     try {
@@ -29,16 +31,41 @@ exports.listCategories = async function(req, res) {
             error: 'Could not fetch the categories.'
         })
     }
-}
+} 
 
-exports.listProductsByCategory = async function(req, res) {
+exports.listAllProducts = async function(req, res) {
     try {
-        const products = await Product.find({ category: req.query.category }).populate('owner', '_id name')
+        // console.log(req.query)
+        let query = {}, sort = {};
+
+        if(req.query.category && req.query.category != "All") {
+            query.category = req.query.category
+        }
+
+        if(req.query.seller) {
+            query.owner = req.query.seller
+        }
+
+        if(req.query.max_price || req.query.min_price) {
+            query.price = { $lte: req.query.max_price || 1000000000, $gte: req.query.min_price || 0 }
+        }
+        
+        if(req.query.sort) {
+            if(req.query.sort == "price_low") {
+                sort = { price: 1 }
+            } else if(req.query.sort == "price_high"){
+                sort = { price: -1 }
+            } else {
+                sort = {};
+            }
+        }
+
+        const products = await Product.find(query).sort(sort).populate('owner', '_id name')
 
         res.json(products);
     } catch(e) {
         return res.status(400).json({
-            error: 'Could not fetch products by category.'
+            error: e.message
         })
     }
 }

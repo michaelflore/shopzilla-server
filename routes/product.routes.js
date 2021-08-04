@@ -19,9 +19,12 @@ router.route('/api/products/by/:userId')
 router.route('/api/products/by/:userId/:productId')
   .delete(productController.deleteProduct)
 
-//List all products by category
+//List all products 
+//sort
+//by category
 router.route('/api/products')
-  .get(productController.listProductsByCategory)
+  .get(productController.listAllProducts)
+
 
 router.param('userId', userController.userById)
 router.param('productId', productController.productById)
