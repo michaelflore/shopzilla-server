@@ -6,6 +6,7 @@
   },
   "scripts": {
     "dev": "nodemon",
+    "data": "node server.js --import",
     "start": "node server.js"
   },
   "dependencies": {
@@ -15,6 +16,7 @@
     "debug": "~2.2.0",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
+    "formidable": "^1.2.2",
     "helmet": "^4.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^5.13.0",

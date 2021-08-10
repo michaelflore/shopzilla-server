@@ -1,0 +1,82 @@
+[
+    {
+        "name": "Milk",
+        "description": "A gallon of milk.",
+        "category": "Drinks",
+        "price": "14",
+        "quantity": "3",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "Eggs",
+        "description": "A carton of eggs.",
+        "category": "Food",
+        "price": "9",
+        "quantity": "7",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "Cherries",
+        "description": "A bag of cherries.",
+        "category": "Food",
+        "price": "10",
+        "quantity": "8",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "AirPods",
+        "description": "Headphones.",
+        "category": "Electronics",
+        "price": "400",
+        "quantity": "3",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "iPad",
+        "description": "An ipad.",
+        "category": "Electronics",
+        "price": "500",
+        "quantity": "6",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "TV",
+        "description": "A tv.",
+        "category": "Electronics",
+        "price": "1400",
+        "quantity": "3",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "Playstation 4",
+        "description": "A gaming system.",
+        "category": "Gaming",
+        "price": "300",
+        "quantity": "3",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "Playstation 5",
+        "description": "A gaming system.",
+        "category": "Gaming",
+        "price": "500",
+        "quantity": "3",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "Nintendo Switch",
+        "description": "A gaming system.",
+        "category": "Gaming",
+        "price": "600",
+        "quantity": "2",
+        "owner": "610d91a3ab38ca3638833363"
+    },
+    {
+        "name": "The Dark Knight",
+        "description": "The movie.",
+        "category": "DVDs",
+        "price": "20",
+        "quantity": "5",
+        "owner": "610d91a3ab38ca3638833363"
+    }
+]

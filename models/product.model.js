@@ -7,6 +7,10 @@ const Product = new Schema({
         trim: true,
         required: 'Name is required'
     },
+    image: {
+        data: Buffer,
+        contentType: String
+    },
     description: {
         type: String,
         trim: true
@@ -18,6 +22,10 @@ const Product = new Schema({
     price: {
         type: Number,
         required: "Price is required"
+    },
+    quantity: {
+        type: Number,
+        required: "Quantity is required"
     },
     owner: {
         type: mongoose.Schema.ObjectId,
