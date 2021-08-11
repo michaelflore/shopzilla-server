@@ -1,6 +1,7 @@
 const Product = require('./../models/product.model');
 
 const fs = require('fs');
+const path = require('path');
 
 const formidable = require('formidable');
 
@@ -208,6 +209,6 @@ exports.getImage = (req, res, next) => {
 }
 
 exports.defaultImage = (req, res) => {
-    // console.log(process.cwd())
-    return res.sendFile(__dirname + '/../assets/images/default-product-image.png')
+    // console.log(path.resolve('/assets/images/default-product-image.png'))
+    return res.sendFile(path.resolve('assets/images/default-product-image.png'))
 }
