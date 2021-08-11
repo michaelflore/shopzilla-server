@@ -209,5 +209,5 @@ exports.getImage = (req, res, next) => {
 
 exports.defaultImage = (req, res) => {
     // console.log(process.cwd())
-    return res.sendFile(process.cwd() + '/assets/images/default-product-image.png')
+    return res.sendFile(__dirname + '/../assets/images/default-product-image.png')
 }
