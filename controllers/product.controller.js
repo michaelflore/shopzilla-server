@@ -93,6 +93,23 @@ exports.latestProducts = async function(req, res) {
         const page = parseInt(req.query.page);
         const skip = (page - 1) * PAGE_SIZE;
         // const products = await Product.find({}).sort('-created').limit(20).populate('owner', '_id name').skip(skip).limit(PAGE_SIZE)
+        const total = await Product.aggregate([
+            { 
+                "$match" : {}
+            },
+            { 
+                "$sort" : {
+                    created: -1
+                }
+            },
+            { 
+                "$limit" : 20
+            },
+            {               
+                "$count": 'count'            
+            }
+      ])
+        
         const products = await Product.aggregate([
             { 
                 "$match" : {}
@@ -137,8 +154,12 @@ exports.latestProducts = async function(req, res) {
                 "$limit": 5
             }
         ])
-console.log(products)
-        res.json(products);
+
+// console.log(products, total)
+        res.json({
+            "products": products,
+            "totalResults": total[0].count
+        });
     } catch(e) {
         return res.status(400).json({
             error: e.message
